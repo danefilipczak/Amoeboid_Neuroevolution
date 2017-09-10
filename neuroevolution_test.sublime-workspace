@@ -1,0 +1,298 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "creature.js",
+			"settings":
+			{
+				"buffer_size": 3044,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sketch.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"package control:instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/danefilipczak/Developer/interview_practice.txt",
+		"/Users/danefilipczak/Developer/python_technique/explanations.txt",
+		"/Users/danefilipczak/Developer/python_technique/solutions.py",
+		"/Users/danefilipczak/Developer/predators/js/specimenData.js",
+		"/Users/danefilipczak/Developer/predators/predators.sublime-project",
+		"/Users/danefilipczak/Developer/predators/index.html",
+		"/Users/danefilipczak/Developer/predators/README.md",
+		"/Users/danefilipczak/Developer/predators/css/main.css",
+		"/Users/danefilipczak/Developer/predators/js/map.js",
+		"/Users/danefilipczak/Developer/predators/js/species.js",
+		"/Users/danefilipczak/Developer/predators/js/app.js",
+		"/Users/danefilipczak/Developer/predators/fungi.sublime-project",
+		"/Users/danefilipczak/Developer/udacity_portfolio-attempt2/index.html",
+		"/Users/danefilipczak/Developer/udacity_portfolio-attempt2/css/style.css",
+		"/Users/danefilipczak/Developer/udacity_portfolio/index.html",
+		"/Users/danefilipczak/Developer/fungi/js/specimenData.js",
+		"/Users/danefilipczak/Developer/fungi/css/main.css",
+		"/Users/danefilipczak/Developer/fungi/js/species.js",
+		"/Users/danefilipczak/Developer/fungi/index.html",
+		"/Users/danefilipczak/Developer/fungi/js/map.js",
+		"/Users/danefilipczak/Developer/fungi/js/app.js",
+		"/Users/danefilipczak/Documents/udacity_portfolio_2nd_attempt/css/style.css",
+		"/Users/danefilipczak/Documents/FSND-Virtual-Machine/vagrant/catalog/static/style.css",
+		"/Users/danefilipczak/Documents/oauth/APIs/Lesson_4/05_Mom & Pop’s Bagel Shop/starter_code/models.py",
+		"/Users/danefilipczak/Documents/oauth/APIs/Lesson_4/05_Mom & Pop’s Bagel Shop/starter_code/views.py",
+		"/Users/danefilipczak/Documents/oauth/project.py",
+		"/Users/danefilipczak/Documents/oauth/templates/login.html",
+		"/Users/danefilipczak/Documents/force-directed_graph/contributors.js",
+		"/Users/danefilipczak/Documents/force-directed_graph/force-direced_graph.sublime-project",
+		"/Users/danefilipczak/Documents/force-directed_graph/node.js",
+		"/Users/danefilipczak/Documents/force-directed_graph/sketch.js",
+		"/Users/danefilipczak/Documents/FSND-Virtual-Machine/vagrant/database_project/output.txt",
+		"/Users/danefilipczak/Documents/FSND-Virtual-Machine/vagrant/database_project/README.md",
+		"/Users/danefilipczak/Documents/FSND-Virtual-Machine/vagrant/database_project/dbproj.py",
+		"/Users/danefilipczak/Documents/FSND-Virtual-Machine/vagrant/forum/forumdb.py",
+		"/Users/danefilipczak/Documents/FSND-Virtual-Machine/vagrant/forum/forum.py",
+		"/Users/danefilipczak/Documents/force-directed_graph/readme.md",
+		"/Users/danefilipczak/Documents/force-directed_graph/index.html"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"checkIfInputIsEmpty",
+			"thumbnail",
+			"login_session",
+			"id",
+			"nodes[i]",
+			"this"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"n",
+			"nodes[i]"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "creature.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 103.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sketch.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "neuroevolution_test.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 148.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
