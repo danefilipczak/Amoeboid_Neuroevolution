@@ -34,12 +34,13 @@ var Creature = function(vector) {
 
 
 Creature.prototype.init = function() {
+    var self = this;
     angleMode(DEGREES);
     for (var i = 0; i < this.divisions; i++) {
         var vec = createVector(this.radius, 0);
         var angle = 360 / this.divisions * i + random(-10, 10);
         vec.rotate(angle);
-        var node = new Node(vec.add(this.pos));
+        var node = new Node(vec.add(this.pos), self);
         this.nodes.push(node);
     }
 };
@@ -130,8 +131,9 @@ Creature.prototype.rejectAll = function() {
 }
 
 Creature.prototype.growMidpoint = function(vec1, vec2) {
+    var self = this;
     var d = p5.Vector.lerp(vec1, vec2, 0.5);
-    var bulb = new Node(d);
+    var bulb = new Node(d, self);
     return bulb;
 }
 

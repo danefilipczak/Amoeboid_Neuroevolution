@@ -1,12 +1,13 @@
-var Node = function(vector) {
+var Node = function(vector, organism) {
 	
+	this.organism = organism; //a refrence to the creature that contains this node.
 	this.pos = vector;
 	this.diameter = 2;
 	this.force = createVector(0, 0, 0);
 
 	this.rForce = 1.3;
 	this.rThresh = 10;
-	this.dThresh = 5; //53
+	this.dThresh = 50; //53
 	this.aForce = 1;
 	this.aThresh = 3; //50
 
@@ -25,6 +26,13 @@ Node.prototype.applyForce = function(){
 		this.force = createVector(0, 0, 0);
 	
 	
+}
+
+Node.prototype.die = function() {
+    var index = this.organism.nodes.indexOf(this);
+    if (index > -1) {
+       this.organism.nodes.splice(index, 1);
+    }
 }
 
 Node.prototype.display = function() {
