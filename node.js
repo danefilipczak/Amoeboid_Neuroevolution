@@ -7,12 +7,12 @@ var Node = function(vector, organism) {
 
 	this.rForce = 1.3;
 	this.rThresh = 10;
-	this.dThresh = 50; //53
+	this.dThresh = 5; //53
 	this.aForce = 1;
 	this.aThresh = 3; //50
 
-	this.mutagenA = 0;
-	this.mutagenB = 0;
+	this.morphogenA = 0;
+	this.morphogenB = 0;
 
 };
 
@@ -29,10 +29,12 @@ Node.prototype.applyForce = function(){
 }
 
 Node.prototype.die = function() {
-    var index = this.organism.nodes.indexOf(this);
-    if (index > -1) {
-       this.organism.nodes.splice(index, 1);
-    }
+	if(this.organism.nodes.length>3){
+	    var index = this.organism.nodes.indexOf(this);
+	    if (index > -1) {
+	       this.organism.nodes.splice(index, 1);
+	    }
+	}
 }
 
 Node.prototype.display = function() {

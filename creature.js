@@ -21,7 +21,9 @@ var Creature = function(vector) {
     */
     this.nodes = []
     this.maxNodes = 200;
-    this.pos = vector
+    this.initialPos = vector;
+
+    this.alive = true;
 
     this.radius = 10; //initial radius
     this.divisions = 10; //initial number of divisions
@@ -38,45 +40,48 @@ Creature.prototype.init = function() {
     angleMode(DEGREES);
     for (var i = 0; i < this.divisions; i++) {
         var vec = createVector(this.radius, 0);
-        var angle = 360 / this.divisions * i + random(-10, 10);
+        var angle = 360 / this.divisions * i;
         vec.rotate(angle);
-        var node = new Node(vec.add(this.pos), self);
+        var node = new Node(vec.add(this.initialPos), self);
         this.nodes.push(node);
     }
+    //console.log(this.getCenter());
 };
 
 Creature.prototype.think = function(brain) {
     /*
-    @param {brain} callable neural network
+    @param {brain} neural network
 
     Updates threshold, forces, and mutagen values 
     */
 
-    //get the average of each neighbor's mutagens
+    var averageMorphogensA = this.getAverageMorphogensA();
+    var averageMorphogensB = this.getAverageMorphogensB();
 
+    for (var i in this.nodes) {
+        var target = p5.Vector.sub(this.initialPos, createVector(-50, -50));
+        var inputs = [
+            averageMorphogensA[i],
+            averageMorphogensB[i],
+            //this.nodes[i].pos.x / width,
+            //this.nodes[i].pos.y / height,
+            target.x,
+            target.y
+        ]
 
+        res = brain.compute(inputs);
 
-    // this.nodes.forEach(function(node) {
-    //     /*
-    //     inputs:
-    //     mutagenA
-    //     mutagenB
-    //     position
-    //     // eventually the location of the closest obstacle
-    //     */
-    //     //get the results from the brain
-
-    //     node.rForce =
-    //         node.rThresh =
-    //         node.dThresh =
-    //         node.aForce =
-    //         node.aThresh =
-
-    //         node.mutagenA =
-    //         node.mutagenB =
-    // });
-
-
+        this.nodes[i].rForce = map(res[0], 0.0, 1.0, 0.1, 1);
+        this.nodes[i].rThresh = map(res[1], 0.0, 1.0, 10, 20);
+        this.nodes[i].dThresh = map(res[2], 0.0, 1.0, 10, 20);
+        this.nodes[i].aForce = map(res[3], 0.0, 1.0, 0.1, 1);
+        this.nodes[i].aThresh = map(res[4], 0.0, 1.0, 10, 20);
+        this.nodes[i].morphogenA = res[5];
+        this.nodes[i].morphogenB = res[6];
+        if (res[7] > 0.5) {
+            this.nodes[i].die()
+        };
+    }
 }
 
 
@@ -89,15 +94,32 @@ Creature.prototype.update = function() {
     this.rejectAll();
     this.edgeSplit();
     this.attractNeighbors();
-    this.nodes.forEach(function(node){
+    this.nodes.forEach(function(node) {
         node.applyForce();
     })
 
 }
 
+Creature.prototype.getLocationDifference = function() {
+    return this.getCenter().dist(this.initialPos)
+}
+
+
+Creature.prototype.getCenter = function() {
+    var average = createVector(0, 0, 0);
+
+    this.nodes.forEach(function(node) {
+        average.add(node.pos);
+    })
+
+    average.div(this.nodes.length)
+
+    return average;
+}
+
 
 Creature.prototype.display = function() {
-    
+
 
     fill(102, 102, 51);
     strokeWeight(5);
@@ -138,20 +160,19 @@ Creature.prototype.growMidpoint = function(vec1, vec2) {
 }
 
 Creature.prototype.edgeSplit = function() {
-    if(this.nodes.length<this.maxNodes){
-        for (var i = 0; i < this.nodes.length; i++) {
-            var neighbor = i + 1;
-            if (neighbor > this.nodes.length - 1) {
-                neighbor = 0
-            };
-            if (this.nodes[i].pos.dist(this.nodes[neighbor].pos) > this.nodes[i].dThresh) {
-                var bulb = this.growMidpoint(this.nodes[i].pos, this.nodes[neighbor].pos);
-                this.nodes.splice(neighbor, 0, bulb);
-            }
+
+    for (var i = 0; i < this.nodes.length; i++) {
+        var neighbor = i + 1;
+        if (neighbor > this.nodes.length - 1) {
+            neighbor = 0
+        };
+        if (this.nodes[i].pos.dist(this.nodes[neighbor].pos) > this.nodes[i].dThresh && this.nodes.length < this.maxNodes) {
+            var bulb = this.growMidpoint(this.nodes[i].pos, this.nodes[neighbor].pos);
+            this.nodes.splice(neighbor, 0, bulb);
         }
     }
-}
 
+}
 
 Creature.prototype.attractNeighbors = function() {
     for (var i = 0; i < this.nodes.length; i++) {
@@ -174,4 +195,38 @@ Creature.prototype.attractNeighbors = function() {
             this.nodes[i].addForce(force.mult(-this.nodes[i].aForce));
         }
     }
+}
+
+
+
+Creature.prototype.getAverageMorphogensA = function() {
+    averages = [];
+    for (var i = 0; i < this.nodes.length; i++) {
+        var right = i + 1;
+        var left = i - 1;
+        if (right > this.nodes.length - 1) {
+            right = 0
+        };
+        if (left < 0) {
+            left = this.nodes.length - 1
+        };
+        averages.push((this.nodes[left].morphogenA + this.nodes[right].morphogenA) / 2)
+    }
+    return averages;
+}
+
+Creature.prototype.getAverageMorphogensB = function() {
+    averages = [];
+    for (var i = 0; i < this.nodes.length; i++) {
+        var right = i + 1;
+        var left = i - 1;
+        if (right > this.nodes.length - 1) {
+            right = 0
+        };
+        if (left < 0) {
+            left = this.nodes.length - 1
+        };
+        averages.push((this.nodes[left].morphogenB + this.nodes[right].morphogenB) / 2)
+    }
+    return averages;
 }
