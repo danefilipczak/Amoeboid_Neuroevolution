@@ -4,7 +4,7 @@ var Simulation = function() {
 	*/
 
 	this.timeStep = 0; //ticker
-	this.length = 120; //length of each round
+	this.length = 300; //length of each round
 	this.obstacles = [];
 	this.creatures = [];
 	this.gen = []; //array of neural networks
@@ -41,9 +41,9 @@ Simulation.prototype.update = function() {
 				// }
 
 				if (this.isItOver) {
-					var fitness = this.creatures[i].getLocationDifference();
-					//target = p5.Vector.sub(this.creatures[i].initialPos, createVector(-50, -50));
-					//fitness = this.creatures[i].getCenter().dist(target)
+					//var fitness = this.creatures[i].getLocationDifference();
+					target = p5.Vector.sub(this.creatures[i].initialPos, createVector(-50, -50));
+					var fitness = this.creatures[i].getCenter().dist(target)
 					Neuvol.networkScore(this.gen[i], fitness);
 				}
 			}

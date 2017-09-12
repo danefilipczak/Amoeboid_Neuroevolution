@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"getAverage",
+				"getAverageMorphogensA"
+			]
 		]
 	},
 	"buffers":
@@ -11,7 +15,7 @@
 			"file": "creature.js",
 			"settings":
 			{
-				"buffer_size": 3044,
+				"buffer_size": 6049,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -20,7 +24,53 @@
 			"file": "sketch.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 658,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "neuroevolution.js",
+			"settings":
+			{
+				"buffer_size": 13931,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "simulation.js",
+			"settings":
+			{
+				"buffer_size": 1685,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node.js",
+			"settings":
+			{
+				"buffer_size": 954,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "notes.md",
+			"settings":
+			{
+				"buffer_size": 1125,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 310,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -33,9 +83,21 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "m",
 		"selected_items":
 		[
+			[
+				"m",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
 			[
 				"",
 				"Package Control: Install Package"
@@ -49,7 +111,7 @@
 				"Install Package Control"
 			]
 		],
-		"width": 392.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -67,6 +129,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/danefilipczak/Developer/neuroevolution_test",
+		"/Users/danefilipczak/Developer/neuroevolution_test/libs"
+	],
 	"file_history":
 	[
 		"/Users/danefilipczak/Developer/interview_practice.txt",
@@ -110,7 +177,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -124,6 +191,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"this.",
 			"checkIfInputIsEmpty",
 			"thumbnail",
 			"login_session",
@@ -137,6 +205,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"node.",
 			"n",
 			"nodes[i]"
 		],
@@ -149,7 +218,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -158,15 +227,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3044,
+						"buffer_size": 6049,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								133,
-								133
+								1338,
+								1338
 							]
 						],
 						"settings":
@@ -176,10 +245,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 103.0,
+						"translation.y": 890.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -188,15 +257,103 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 658,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "neuroevolution.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13931,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7061,
+								7061
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6797.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "simulation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1299,
+								1299
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 362.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "node.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 954,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								620,
+								620
 							]
 						],
 						"settings":
@@ -207,7 +364,65 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "notes.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1078,
+								1078
+							]
+						],
+						"settings":
+						{
+							"parser": "github",
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"target": "browser"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -252,7 +467,7 @@
 	"project": "neuroevolution_test.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -25,6 +25,8 @@ once parameters are retreived from the neural net, a mapping is performed to put
 
 
 # Variant 1: Simple Locomotion
+## test 1
+this doesn't seem to work very well, and introduces global coordinates into the model by way of x and y position. 
 
 | Input Layer       | Output Layer         | 
 | ------------- |:-------------:|
@@ -35,4 +37,21 @@ once parameters are retreived from the neural net, a mapping is performed to put
 | | aThresh |
 | | morphogen A|
 | | morphogen B |
+| | die? |
+
+
+## test 2:
+
+taking out global position and adding current values of all the forces. 
+
+
+| Input Layer       | Output Layer         | 
+| ------------- |:-------------:|
+| rForce | rForce | 
+| rThresh |  rThresh  |
+| dThresh | dThresh |
+| aForce | aForce |
+| aThresh | aThresh |
+| average of neighbor's morphogen A | morphogen A|
+| average of neighbor's morphogen B | morphogen B |
 | | die? |

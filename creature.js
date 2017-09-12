@@ -20,7 +20,7 @@ var Creature = function(vector) {
     @param {vector} starting location
     */
     this.nodes = []
-    this.maxNodes = 200;
+    this.maxNodes = 70;
     this.initialPos = vector;
 
     this.alive = true;
@@ -59,14 +59,17 @@ Creature.prototype.think = function(brain) {
     var averageMorphogensB = this.getAverageMorphogensB();
 
     for (var i in this.nodes) {
-        var target = p5.Vector.sub(this.initialPos, createVector(-50, -50));
+        //var target = p5.Vector.sub(this.initialPos, createVector(-50, -50));
         var inputs = [
+            this.nodes[i].rForce,
+            this.nodes[i].rThresh,
+            this.nodes[i].dThresh,
+            this.nodes[i].aForce,
+            this.nodes[i].aThresh,
             averageMorphogensA[i],
             averageMorphogensB[i],
             //this.nodes[i].pos.x / width,
             //this.nodes[i].pos.y / height,
-            target.x,
-            target.y
         ]
 
         res = brain.compute(inputs);
@@ -94,6 +97,7 @@ Creature.prototype.update = function() {
     this.rejectAll();
     this.edgeSplit();
     this.attractNeighbors();
+    this.enforceAngles();
     this.nodes.forEach(function(node) {
         node.applyForce();
     })
@@ -197,7 +201,29 @@ Creature.prototype.attractNeighbors = function() {
     }
 }
 
+function findAngle(p0, p1, p2) {
+    var b = Math.pow(p1.x - p0.x, 2) + Math.pow(p1.y - p0.y, 2),
+        a = Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2),
+        c = Math.pow(p2.x - p0.x, 2) + Math.pow(p2.y - p0.y, 2);
+    return Math.acos((a + b - c) / Math.sqrt(4 * a * b));
+}
 
+Creature.prototype.enforceAngles = function() {
+    for (var i = 0; i < this.nodes.length; i++) {
+        var right = i + 1;
+        var left = i - 1;
+        if (right > this.nodes.length - 1) {
+            right = 0
+        };
+        if (left < 0) {
+            left = this.nodes.length - 1
+        };
+        if(findAngle(this.nodes[left], this.nodes[i], this.nodes[right]<1)){
+            var escape = p5.Vector.sub(this.nodes[left], this.nodes[right]);
+            this.nodes[left].addForce(escape.mult(-1));
+        }
+    }
+}
 
 Creature.prototype.getAverageMorphogensA = function() {
     averages = [];
