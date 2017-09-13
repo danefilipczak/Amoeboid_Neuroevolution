@@ -20,7 +20,7 @@ Simulation.prototype.start = function() {
 	this.creatures = [];
 	this.gen = Neuvol.nextGeneration();
 	for (var i in this.gen) {
-		var c = new Creature(createVector(width/this.gen.length*i- (width/2), 0));
+		var c = new Creature(createVector(0, 0));
 		this.creatures.push(c)
 	}
 	this.generation++;
@@ -41,9 +41,9 @@ Simulation.prototype.update = function() {
 				// }
 
 				if (this.isItOver) {
-					//var fitness = this.creatures[i].getLocationDifference();
-					target = p5.Vector.sub(this.creatures[i].initialPos, createVector(-50, -50));
-					var fitness = this.creatures[i].getCenter().dist(target)
+					var fitness = this.creatures[i].getLocationDifference();
+					//target = p5.Vector.sub(this.creatures[i].initialPos, createVector(-50, -50));
+					//var fitness = this.creatures[i].getCenter().dist(target)
 					Neuvol.networkScore(this.gen[i], fitness);
 				}
 			}

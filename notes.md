@@ -55,3 +55,7 @@ taking out global position and adding current values of all the forces.
 | average of neighbor's morphogen A | morphogen A|
 | average of neighbor's morphogen B | morphogen B |
 | | die? |
+
+
+
+It's becoming apparent that you need some way to keep the shapes from degrading into straight lines, to keep the angles open and keep the shape a polygon. Math!

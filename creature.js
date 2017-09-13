@@ -20,7 +20,8 @@ var Creature = function(vector) {
     @param {vector} starting location
     */
     this.nodes = []
-    this.maxNodes = 70;
+    this.maxNodes = 30;
+    this.minNodes = 5;
     this.initialPos = vector;
 
     this.alive = true;
@@ -74,11 +75,11 @@ Creature.prototype.think = function(brain) {
 
         res = brain.compute(inputs);
 
-        this.nodes[i].rForce = map(res[0], 0.0, 1.0, 0.1, 1);
-        this.nodes[i].rThresh = map(res[1], 0.0, 1.0, 10, 20);
-        this.nodes[i].dThresh = map(res[2], 0.0, 1.0, 10, 20);
-        this.nodes[i].aForce = map(res[3], 0.0, 1.0, 0.1, 1);
-        this.nodes[i].aThresh = map(res[4], 0.0, 1.0, 10, 20);
+        this.nodes[i].rForce = map(res[0], 0.0, 1.0, 0.0, 0.3);
+        this.nodes[i].rThresh = map(res[1], 0.0, 1.0, 10, 50);
+        this.nodes[i].dThresh = map(res[2], 0.0, 1.0, 10, 50);
+        this.nodes[i].aForce = map(res[3], 0.0, 1.0, 0.0, 0.3);
+        this.nodes[i].aThresh = map(res[4], 0.0, 1.0, 10, 50);
         this.nodes[i].morphogenA = res[5];
         this.nodes[i].morphogenB = res[6];
         if (res[7] > 0.5) {
@@ -93,11 +94,13 @@ Creature.prototype.update = function() {
     /*
     Here we do all the work of updating each node's position based on its parameters.
     */
+    if(this.nodes.length<this.maxNodes){
 
-    this.rejectAll();
-    this.edgeSplit();
+        this.rejectAll();
+        this.edgeSplit();
+    }
     this.attractNeighbors();
-    this.enforceAngles();
+    //this.enforceAngles();
     this.nodes.forEach(function(node) {
         node.applyForce();
     })
@@ -125,7 +128,7 @@ Creature.prototype.getCenter = function() {
 Creature.prototype.display = function() {
 
 
-    fill(102, 102, 51);
+    fill(102, 102, 51, 20);
     strokeWeight(5);
     stroke(10);
     beginShape();

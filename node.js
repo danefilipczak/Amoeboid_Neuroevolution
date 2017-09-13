@@ -29,7 +29,7 @@ Node.prototype.applyForce = function(){
 }
 
 Node.prototype.die = function() {
-	if(this.organism.nodes.length>3){
+	if(this.organism.nodes.length>this.organism.minNodes){
 	    var index = this.organism.nodes.indexOf(this);
 	    if (index > -1) {
 	       this.organism.nodes.splice(index, 1);

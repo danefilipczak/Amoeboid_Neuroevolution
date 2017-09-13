@@ -6,7 +6,7 @@ function setup() {
     var centerX = width / 2;
     var centerY = height / 2;
     Neuvol = new Neuroevolution({
-        population: 10,
+        population: 50,
         network: [7, [7, 7], 8],
         mutationRate:0.05,
         mutationRange: 0.5,
