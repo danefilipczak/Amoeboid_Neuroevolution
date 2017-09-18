@@ -14,7 +14,7 @@ var Simulation = function() {
 }
 
 Simulation.prototype.start = function() {
-	console.log("generation #" + this.generation)
+	console.log("generation number" + this.generation)
 	this.timeStep = 0;
 	this.obstacles = [];
 	this.creatures = [];
