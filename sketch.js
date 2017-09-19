@@ -23,8 +23,6 @@ function setup() {
 function draw() {
     background(255);
     translate(width/2, height/2)
-    
     scale(zoom);
-    //translate(width/(zoom*zoom)-width, height/(zoom*zoom)-height)
     simulation.update();
 }
