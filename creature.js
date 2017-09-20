@@ -23,9 +23,7 @@ var Creature = function(vector) {
     this.maxNodes = 30;
     this.minNodes = 5;
     this.initialPos = vector;
-
     this.alive = true;
-
     this.radius = 10; //initial radius
     this.divisions = 10; //initial number of divisions
 
