@@ -1,7 +1,3 @@
-# love
-
-motivation is a sickly tool
-
 
 
 # parameter mapping
