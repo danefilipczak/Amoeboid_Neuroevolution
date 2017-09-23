@@ -17,7 +17,6 @@ once parameters are retreived from the neural net, a mapping is performed to put
 | morphogen B | no mapping |
 | die? | boolean: output>0.5 |
 
-
 # Variant 1: Simple Locomotion
 ## test 1
 this doesn't seem to work very well, and introduces global coordinates into the model by way of x and y position. 
