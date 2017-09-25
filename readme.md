@@ -1,0 +1,1 @@
+This is an in-progress research project seeking to model ameoboid movement through neuroevolution. Current notes can be found in the ` notes.md ` file
